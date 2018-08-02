@@ -5,8 +5,8 @@ public class Student extends People {
     private int studentId;
     private float mark;
 
-    public Student(String fistName, String lastName, int weight, int studentId, float mark) {
-        super(fistName, lastName, weight);
+    public Student(String fistName, String lastName, int weight, int age, int studentId, float mark) {
+        super(fistName, lastName, weight, age);
         this.studentId = studentId;
         this.mark = mark;
     }
@@ -16,7 +16,7 @@ public class Student extends People {
 
     @Override
     public String toString() {
-        return  super.toString() + "Student ID: " + studentId + ", mark=" + mark;
+        return  super.toString() + " Student ID: " + studentId + ", mark=" + mark;
     }
 
     public int getStudentId() {

@@ -4,12 +4,14 @@ public class People {
 
     private String fistName;
     private String lastName;
+    private int age;
     private int weight;
 
-    public People(String fistName, String lastName, int weight) {
+    public People(String fistName, String lastName, int weight, int age) {
         this.fistName = fistName;
         this.lastName = lastName;
         this.weight = weight;
+        this.age=age;
     }
 
     public People() {
@@ -17,7 +19,7 @@ public class People {
 
     @Override
     public String toString(){
-        return "First Name: " + fistName + " Last Name: " + lastName + " Weight: " + weight + " ";
+        return "First Name: " + fistName + " Last Name: " + lastName + " Weight: " + weight + " " + " Age: " + age;
     }
 
     public String getFistName() {
@@ -43,5 +45,14 @@ public class People {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
 
 }
