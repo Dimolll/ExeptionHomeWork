@@ -1,6 +1,8 @@
 package com.dimoll;
 
-public class Student extends People {
+import java.io.Serializable;
+
+public class Student extends People implements Serializable {
 
     private int studentId;
     private float mark;

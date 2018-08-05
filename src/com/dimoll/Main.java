@@ -1,5 +1,9 @@
 package com.dimoll;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Arrays;
 
 public class Main {
@@ -45,6 +49,34 @@ public class Main {
             for(Student army: firstGroup.getGroup()) {
                 System.out.println(army.toString());
             }
+
+            //Serialize
+            try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("person.dat")))
+            {
+                oos.writeObject(firstGroup);
+            }
+            catch(Exception ex){
+
+                System.out.println(ex.getMessage());
+            }
+
+            //DeSerialize
+            System.out.println("\n===================================\n");
+            try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.dat")))
+            {
+                Group deserGroup = (Group)ois.readObject();
+
+                for(Student s: deserGroup.getGroup()){
+                    System.out.println(s.toString());
+                }
+            }
+
+            catch(Exception ex){
+
+                System.out.println(ex.getMessage());
+            }
+
+
         } catch (FullGroupExeption /*| NullPointerException*/ e){
             e.getMessage();
         }

@@ -1,8 +1,8 @@
 package com.dimoll;
 
-import java.util.Arrays;
+import java.io.Serializable;
 
-public class Group implements Comparable,IMilitaryCommissar{
+public class Group implements Comparable,IMilitaryCommissar, Serializable {
 
     private Student[] group;
     private int top;

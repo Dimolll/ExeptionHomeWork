@@ -1,6 +1,8 @@
 package com.dimoll;
 
-public class People {
+import java.io.Serializable;
+
+public class People implements Serializable {
 
     private String fistName;
     private String lastName;
